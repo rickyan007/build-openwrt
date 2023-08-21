@@ -30,8 +30,10 @@ sed -i 's#openwrt.proxy.ustclug.org#mirrors.bfsu.edu.cn\\/openwrt#' package/lean
 #
 # Add luci-app-amlogic
 # svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
-svn co https://github.com/fw876/helloworld package/luci-app-helloworld
-svn co https://github.com/jeessy2/ddns-go package/luci-app-ddnsgo
+#svn co https://github.com/fw876/helloworld package/luci-app-helloworld
+#svn co https://github.com/jeessy2/ddns-go package/luci-app-ddnsgo
+git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
 # Fix runc version error
 # rm -rf ./feeds/packages/utils/runc/Makefile
 # svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
