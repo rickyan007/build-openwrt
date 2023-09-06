@@ -1,9 +1,9 @@
 #!/bin/bash
 #========================================================================================================================
-# https://github.com/ophub/amlogic-s9xxx-openwrt
+# https://githubfast.com/ophub/amlogic-s9xxx-openwrt
 # Description: Automatically Build OpenWrt for Amlogic s9xxx tv box
 # Function: Diy script (After Update feeds, Modify the default IP, hostname, theme, add/remove software packages, etc.)
-# Source code repository: https://github.com/coolsnowwolf/lede / Branch: master
+# Source code repository: https://githubfast.com/coolsnowwolf/lede / Branch: master
 #========================================================================================================================
 
 # ------------------------------- Main source started -------------------------------
@@ -29,24 +29,24 @@ sed -i 's#openwrt.proxy.ustclug.org#mirrors.bfsu.edu.cn\\/openwrt#' package/lean
 # ------------------------------- Other started -------------------------------
 #
 # Add luci-app-amlogic
-# svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
-# svn co https://github.com/fw876/helloworld package/luci-app-helloworld
-# svn co https://github.com/jeessy2/ddns-go package/luci-app-ddnsgo
+# svn co https://githubfast.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
+# svn co https://githubfast.com/fw876/helloworld package/luci-app-helloworld
+# svn co https://githubfast.com/jeessy2/ddns-go package/luci-app-ddnsgo
 svn co https://github.com/vernesong/OpenClash package/openclash
-svn co https://github.com/linkease/istore package/istore
-# git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+# svn co https://githubfast.com/linkease/istore package/istore
+# git clone --depth=1 https://githubfast.com/fw876/helloworld.git package/helloworld
 # Fix runc version error
 # rm -rf ./feeds/packages/utils/runc/Makefile
-# svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
+# svn export https://githubfast.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
 
 # coolsnowwolf default software package replaced with Lienol related software package
 # rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
-# svn co https://github.com/Lienol/openwrt-packages/trunk/utils/{containerd,libnetwork,runc,tini} feeds/packages/utils
+# svn co https://githubfast.com/Lienol/openwrt-packages/trunk/utils/{containerd,libnetwork,runc,tini} feeds/packages/utils
 
 # Add third-party software packages (The entire repository)
-# git clone https://github.com/libremesh/lime-packages.git package/lime-packages
+# git clone https://githubfast.com/libremesh/lime-packages.git package/lime-packages
 # Add third-party software packages (Specify the package)
-# svn co https://github.com/libremesh/lime-packages/trunk/packages/{shared-state-pirania,pirania-app,pirania} package/lime-packages/packages
+# svn co https://githubfast.com/libremesh/lime-packages/trunk/packages/{shared-state-pirania,pirania-app,pirania} package/lime-packages/packages
 # Add to compile options (Add related dependencies according to the requirements of the third-party software package Makefile)
 # sed -i "/DEFAULT_PACKAGES/ s/$/ pirania-app pirania ip6tables-mod-nat ipset shared-state-pirania uhttpd-mod-lua/" target/linux/armvirt/Makefile
 
